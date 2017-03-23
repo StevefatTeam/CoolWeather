@@ -3,6 +3,7 @@ package com.stevefat.coolweather;
 import android.app.Application;
 
 import com.stevefat.coolweather.model.db.entity.City;
+import com.stevefat.coolweather.model.db.entity.ProvinceCity;
 import com.stevefat.coolweather.util.CityUtil;
 import com.stevefat.coolweather.util.LogLevel;
 import com.stevefat.coolweather.util.Logger;
@@ -30,8 +31,9 @@ public class WeatherApp extends Application {
         new Logger().init("coolWeather");
         try {
             //存入城市的数据
-            int count = DataSupport.findAll(City.class).size();
-            if (count > 0) {
+//            int count = DataSupport.findAll(City.class).size();
+            int count = DataSupport.findAll(ProvinceCity.class).size();
+            if (count <=0) {
                 CityUtil.parsingJsonCity(this);
             }
         } catch (IOException e) {

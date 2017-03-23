@@ -1,12 +1,20 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-              android:layout_width="match_parent"
-              android:layout_height="match_parent"
-              android:orientation="vertical">
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
 
-    <TextView
-        android:id="@+id/tv"
+    <include layout="@layout/title" />
+
+    <android.support.v4.widget.NestedScrollView
+        android:id="@+id/scrollView"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"/>
+        android:layout_height="match_parent">
+        <!--这个是头部的温度显示-->
+        <include layout="@layout/current_item" />
+        <!--这个是中间几天的天气显示-->
+        <!--这个是空气指数的显示-->
+        <!--这个是日常生活的显示-->
+    </android.support.v4.widget.NestedScrollView>
 
 </LinearLayout>

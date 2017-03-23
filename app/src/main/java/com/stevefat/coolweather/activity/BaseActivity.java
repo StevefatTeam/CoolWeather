@@ -30,6 +30,7 @@ public abstract class BaseActivity extends AppCompatActivity {
     private String[] permissionArray = new String[]{
             Manifest.permission.READ_PHONE_STATE,
             Manifest.permission.READ_EXTERNAL_STORAGE,
+            Manifest.permission.RECORD_AUDIO
     };
 
     @Override

@@ -33,6 +33,7 @@
     -->
     <list>
         <mapping class = "com.stevefat.coolweather.model.db.entity.City"/>
+        <mapping class = "com.stevefat.coolweather.model.db.entity.ProvinceCity"/>
     </list>
 
     <!--

@@ -9,6 +9,7 @@ import com.stevefat.coolweather.contract.MainContract;
 import com.stevefat.coolweather.model.http.ApiClient;
 import com.stevefat.coolweather.model.http.Service.WeatherService;
 import com.stevefat.coolweather.model.http.entity.Weather;
+import com.stevefat.coolweather.util.CheckCode;
 import com.stevefat.coolweather.util.Logger;
 
 import java.io.IOException;
@@ -33,9 +34,8 @@ public class MainPresenter implements MainContract.Presenter {
     CompositeSubscription mSubscription;
 
 
-    public MainPresenter(@NonNull MainContract.View mainView, String cityName) {
+    public MainPresenter(@NonNull MainContract.View mainView) {
         mMainView = mainView;
-        this.cityName = cityName;
         this.mSubscription = new CompositeSubscription();
         mMainView.setPresenter(this);
     }
@@ -55,6 +55,7 @@ public class MainPresenter implements MainContract.Presenter {
 
             @Override
             public void onError(Throwable e) {
+
                 mMainView.showLoadingStatisticsError();
             }
 
@@ -64,10 +65,12 @@ public class MainPresenter implements MainContract.Presenter {
                     Weather weather = new Weather();
                     String result = responseBody.string();
                     weather = JSON.parseObject(result, Weather.class);
-//                    Log.e("onNext", responseBody.string());
-//                    Logger.e(responseBody.string());
-                    if (weather.getRetCode().equals("200")) {
+                    String resultCode = CheckCode.valiteCode(Integer.valueOf(weather.getRetCode()));
+                    if (resultCode.equals("1")) {
                         mMainView.displayWeather(weather);
+                    } else {
+                        //错误的情况下输出log日志
+                        Logger.e(resultCode);
                     }
                 } catch (IOException e) {
                     e.printStackTrace();
@@ -80,6 +83,9 @@ public class MainPresenter implements MainContract.Presenter {
 
     @Override
     public void subscribe() {
+        //获取一下本地存储的数据
+        cityName = "洛阳";
+        //根据本地数据获取网络数据
         loadWeather(cityName);
     }
 
