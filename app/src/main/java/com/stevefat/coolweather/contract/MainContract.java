@@ -13,7 +13,7 @@ public interface MainContract {
         //显示数据
         void displayWeather(Weather weather);
 
-        void showLoadingStatisticsError();
+        void showLoadingStatisticsError(Throwable e);
     }
 
     interface Presenter extends BasePresenter {

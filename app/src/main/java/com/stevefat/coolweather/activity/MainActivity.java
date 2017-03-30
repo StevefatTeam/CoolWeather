@@ -1,7 +1,10 @@
 package com.stevefat.coolweather.activity;
 
 
+import android.graphics.Color;
+import android.os.Build;
 import android.text.TextUtils;
+import android.view.View;
 
 import com.stevefat.coolweather.R;
 import com.stevefat.coolweather.presenter.MainPresenter;
@@ -42,6 +45,12 @@ public class MainActivity extends BaseActivity {
 
     @Override
     protected int getLayoutView() {
+        if(Build.VERSION.SDK_INT>=21){
+            View decorView = getWindow().getDecorView();
+            decorView.setSystemUiVisibility(View.SYSTEM_UI_FLAG_FULLSCREEN|View.SYSTEM_UI_FLAG_LAYOUT_STABLE);
+            getWindow().setStatusBarColor(Color.TRANSPARENT);
+        }
+
         return R.layout.activity_main;
     }
 

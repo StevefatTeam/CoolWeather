@@ -9,19 +9,23 @@ import android.view.ViewGroup;
 
 import com.stevefat.coolweather.contract.MainContract;
 
+import butterknife.ButterKnife;
+
 /**
  * Created by stevefat on 2017/3/6.
  */
 
 public abstract class BaseFragment extends Fragment {
-    public View mView;
+    public View rootView;
 
-    @Nullable
+
     @Override
-    public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        mView = getlayoutView(inflater);
+    public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
+        // TODO: inflate a fragment view
+        rootView = getlayoutView(inflater);
+        ButterKnife.bind(this, rootView);
         initView();
-        return mView;
+        return rootView;
     }
 
     public abstract View getlayoutView(LayoutInflater inflater);

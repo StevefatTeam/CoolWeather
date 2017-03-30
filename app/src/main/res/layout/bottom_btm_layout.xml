@@ -1,0 +1,153 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+    <!--对今天的天气做下说明-->
+    <View style="@style/view_style" />
+
+    <TextView
+        android:id="@+id/day_weather_about"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+    <View style="@style/view_style" />
+
+    <android.support.percent.PercentRelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <TextView
+            style="@style/botm_view_style_left"
+            android:text="日出:"
+            app:layout_widthPercent="40%" />
+
+
+        <TextView
+            android:id="@+id/sunrise"
+            style="@style/botm_view_style_right"
+            app:layout_widthPercent="60%" />
+
+        <TextView
+            style="@style/botm_view_style_left"
+            android:layout_below="@+id/sunrise"
+            android:text="日落:"
+            app:layout_widthPercent="40%" />
+
+
+        <TextView
+            android:id="@+id/sunset"
+            style="@style/botm_view_style_right"
+            android:layout_below="@+id/sunrise"
+            app:layout_widthPercent="60%" />
+
+        <TextView
+            style="@style/botm_view_style_left"
+            android:layout_below="@+id/sunset"
+            android:text="湿度:"
+            app:layout_widthPercent="40%" />
+
+
+        <TextView
+            android:id="@+id/humidity"
+            style="@style/botm_view_style_right"
+            android:layout_below="@+id/sunset"
+            app:layout_widthPercent="60%" />
+
+        <TextView
+            style="@style/botm_view_style_left"
+            android:layout_below="@+id/humidity"
+            android:text="风速:"
+            app:layout_widthPercent="40%" />
+
+
+        <TextView
+            android:id="@+id/wind"
+            style="@style/botm_view_style_right"
+            android:layout_below="@+id/humidity"
+            app:layout_widthPercent="60%" />
+
+        <TextView
+            style="@style/botm_view_style_left"
+            android:layout_below="@+id/wind"
+            android:text="空气质量指数:"
+            app:layout_widthPercent="40%" />
+
+
+        <TextView
+            android:id="@+id/pollutionIndex"
+            style="@style/botm_view_style_right"
+            android:layout_below="@+id/wind"
+            app:layout_widthPercent="60%" />
+
+        <TextView
+            style="@style/botm_view_style_left"
+            android:layout_below="@+id/pollutionIndex"
+            android:text="空气质量:"
+            app:layout_widthPercent="40%" />
+
+
+        <TextView
+            android:id="@+id/airCondition"
+            style="@style/botm_view_style_right"
+            android:layout_below="@+id/pollutionIndex"
+            app:layout_widthPercent="60%" />
+
+        <TextView
+            style="@style/botm_view_style_left"
+            android:layout_below="@+id/airCondition"
+            android:text="感冒指数:"
+            app:layout_widthPercent="40%" />
+
+
+        <TextView
+            android:id="@+id/coldIndex"
+            style="@style/botm_view_style_right"
+            android:layout_below="@+id/airCondition"
+            app:layout_widthPercent="60%" />
+
+        <TextView
+            style="@style/botm_view_style_left"
+            android:layout_below="@+id/coldIndex"
+            android:text="穿衣指数:"
+            app:layout_widthPercent="40%" />
+
+
+        <TextView
+            android:id="@+id/dressingIndex"
+            style="@style/botm_view_style_right"
+            android:layout_below="@+id/coldIndex"
+            app:layout_widthPercent="60%" />
+
+        <TextView
+            style="@style/botm_view_style_left"
+            android:layout_below="@+id/dressingIndex"
+            android:text="运动指数:"
+            app:layout_widthPercent="40%" />
+
+
+        <TextView
+            android:id="@+id/exerciseIndex"
+            style="@style/botm_view_style_right"
+            android:layout_below="@+id/dressingIndex"
+            app:layout_widthPercent="60%" />
+
+        <TextView
+            style="@style/botm_view_style_left"
+            android:layout_below="@+id/exerciseIndex"
+            android:text="洗车指数:"
+            app:layout_widthPercent="40%" />
+
+
+        <TextView
+            android:id="@+id/washIndex"
+            style="@style/botm_view_style_right"
+            android:layout_below="@+id/exerciseIndex"
+            app:layout_widthPercent="60%" />
+
+
+    </android.support.percent.PercentRelativeLayout>
+
+
+</LinearLayout>

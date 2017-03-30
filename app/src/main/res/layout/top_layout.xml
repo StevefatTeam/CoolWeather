@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@android:color/transparent"
+    android:orientation="vertical">
+
+    <TextView
+        android:id="@+id/weather_update_time"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingLeft="@dimen/padding10"
+        android:text="03月18日 16:39 发布"
+        android:visibility="gone" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/weather_update_time"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/weather_city"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:padding="@dimen/padding5"
+            android:text="洛阳"
+            android:textSize="@dimen/text_size_30" />
+
+        <TextView
+            android:id="@+id/weather_air"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:padding="@dimen/padding5"
+            android:text="空气质量:不利于健康"
+            android:textSize="@dimen/text_size_20" />
+
+        <TextView
+            android:id="@+id/weather_temp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:padding="@dimen/padding5"
+            android:text="11°"
+            android:textSize="@dimen/text_size_50" />
+
+        <View style="@style/view_style" />
+    </LinearLayout>
+
+
+</RelativeLayout>
